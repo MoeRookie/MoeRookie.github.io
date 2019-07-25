@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>My MkDocs</title>
+        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=".">My MkDocs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href=".">首页</a>
+                            </li>
+                            <li >
+                                <a href="about/">关于</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="disabled">
+                                <a rel="next" >
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="about/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#mkdocs">MkDocs项目文档生成器(一)</a></li>
+            <li><a href="#_1">简介</a></li>
+            <li><a href="#_5">安装</a></li>
+            <li><a href="#_6">使用</a></li>
+            <li><a href="#_10">注意</a></li>
+        <li class="main "><a href="#mkdocs_1">MkDocs项目文档生成器(二)</a></li>
+            <li><a href="#_14">前言</a></li>
+            <li><a href="#github-pages">项目发布到GitHub Pages</a></li>
+            <li><a href="#_15">编辑</a></li>
+            <li><a href="#_16">样式</a></li>
+            <li><a href="#_18">配置</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="mkdocs">MkDocs项目文档生成器(一)</h1>
+<h2 id="_1">简介</h2>
+<h4 id="_2">介绍</h4>
+<p>项目文档生成器，生成静态站点，管理MarkDown文档；</p>
+<h4 id="_3">官网</h4>
+<p><a href="http://www.mkdocs.org/">英文官网</a> <a href="https://markdown-docs-zh.readthedocs.io/zh_CN/latest/">中文官网</a>  <code>建议直接看最新的英文官方文档</code></p>
+<h4 id="_4">特点</h4>
+<ul>
+<li>一个用于创建项目文档的快速、简单、华丽的静态站点生成器，文档源码使用 Markdown 来撰写，用一个 YAML 文件作为配置文档。</li>
+<li>构建完全静态的 HTML 站点，可以将它托管到 GitHub pages、Amazon S3 等任意地方。</li>
+<li>默认包含大量美观的主题，可以从 bootstrap, readthedocs 和 12 款 bootswatch 主题中选择。</li>
+<li>即时预览。</li>
+<li>易于配置。</li>
+<li>交叉索引。</li>
+</ul>
+<h2 id="_5">安装</h2>
+<ul>
+<li>
+<h5 id="brew-search-mkdocs-homebrew-caskmkdocs"><code>brew search mkdocs</code> 搜索Homebrew Cask中是否存在mkdocs</h5>
+</li>
+<li>
+<h5 id="brew-install-mkdocs-mkdocs"><code>brew install mkdocs</code> 安装MkDocs</h5>
+</li>
+<li>
+<h5 id="mkdocs-version"><code>mkdocs --version</code> 验证安装</h5>
+</li>
+</ul>
+<h2 id="_6">使用</h2>
+<h4 id="_7">初步试用</h4>
+<p>根据官方文档的步骤创建和使用MkDocs <code>建议先看中文文档了解过程，然后根据官方文档操作，因为官方文档总是最新的。</code></p>
+<h4 id="_8">常用命令</h4>
+<ul>
+<li>
+<p><code>help</code> 帮助 <code>指定命令 --help : 查看给定命令上可用的选项列表。</code></p>
+</li>
+<li>
+<p><code>new</code> 创建新的MkDocs工程</p>
+</li>
+<li>
+<p><code>serve</code> 运行内建的开发服务器</p>
+</li>
+<li>
+<p><code>build</code> 构建MkDocs文档</p>
+</li>
+<li>
+<p><code>gh-deploy</code> 将文档部署到GitHub页面上</p>
+</li>
+<li>
+<p><code>json</code> 将MkDocs文档构建成JSON文件</p>
+</li>
+</ul>
+<h4 id="_9">操作流程</h4>
+<p>1.创建工程 - <code>mkdocs new 工程名</code></p>
+<p>2.启用内建服务器 - <code>mkdocs serve</code></p>
+<p>3.在浏览器中打开 - <code>http://127.0.0.1:8000/</code></p>
+<p>4.添加头部导航条</p>
+<p>4.1. 在mkdocs.yml中修改site_name为指定内容</p>
+<p>4.2. 在mkdocs.yml中配置导航条</p>
+<ul>
+<li>
+<p>在docs目录下新建about.md</p>
+</li>
+<li>
+<p>.yml配置文件内容如下</p>
+</li>
+</ul>
+<pre><code class="java">   site_name: My MkDocs
+   pages:
+   - 首页: index.md
+   - 关于: about.md
+</code></pre>
+
+<p>5.配置主题</p>
+<pre><code class="java">在mkdocs.yml中添加主题
+theme: readthedocs
+</code></pre>
+
+<p>6.生成站点 - <code>mkdocs build</code></p>
+<ul>
+<li>
+<h5 id="git-gitignore-siteecho-site-gtgt-gitignore">如果你使用 git 等版本控制系统，你可能不希望提交构建之后的文档到版本库，在 .gitignore 中添加site/即可忽略该目录<code>echo "site/" &gt;&gt; .gitignore</code></h5>
+</li>
+<li>
+<h5 id="site-cleanmkdocs-build-clean">一段时间后，可能有文件被从源码中移除了，但是相关的文档仍残留在 site 目录中。而在构建命令中添加--clean参数即可移除这些文档<code>mkdocs build —clean</code></h5>
+</li>
+</ul>
+<p>7.发布</p>
+<ol>
+<li>
+<h5 id="mkdocs-github-project-pages-amazon-s3-site">MkDocs 生成的文档只包含静态文件，因此你可以将文档部署到任意地方。GitHub project pages 和Amazon S3 是不错的选择，只需上传 site 目录到你需要发布的位置即可。</h5>
+</li>
+<li>
+<h5 id="gitlab">如果是公司的项目，项目文档不能对外开放，你可以上传到公司的GitLab上。</h5>
+</li>
+<li>
+<h5 id="github">如果是个人的项目，你可以上传到GitHub上。</h5>
+</li>
+</ol>
+<h2 id="_10">注意</h2>
+<ul>
+<li>
+<h5 id="_11">如果创建站点的话，将图片和文档放在同一个文件夹中即可。</h5>
+</li>
+<li>
+<h5 id="_12">如果是图片的话，需要重启本地内置的服务器。</h5>
+</li>
+<li>
+<h5 id="_13">内建服务器支持在配置文件、文档目录或主题发生改变时自动载入并重新生成文档。</h5>
+</li>
+</ul>
+<h1 id="mkdocs_1">MkDocs项目文档生成器(二)</h1>
+<h2 id="_14">前言</h2>
+<p>前面一篇讲了如果搭建自己的MkDocs来管理自己的文档，在搭建完成后既可以使用内设的小型服务器来生成一个静态的站点、又可以将我们的site文件夹直接放到服务器上；</p>
+<pre><code class="java">eg.
+放在本地的Tomcat: apacht-comcat-8.0.36\webapps路径下，启用自己的Tomcat，就能够直接访问：http://ipaddress:8080/site/，就会默认打开site目录下的index.html。
+同理，我们也可以将其放到自己公司的服务器或者托管到GithubPages上；
+</code></pre>
+
+<h2 id="github-pages">项目发布到GitHub Pages</h2>
+<ol>
+<li>创建名为<code>username.github.io</code>的空<code>repository</code></li>
+<li>将仓库<code>clone</code>到本地</li>
+<li>将mkdocs文档生成的site文件夹下的所有内容复制到本地的仓库中并<code>push</code>到github上</li>
+<li>访问<code>username.github.io</code>，默认就会打开仓库的根目录下的index.html这个网页 - 恭喜你，大功告成！</li>
+</ol>
+<h2 id="_15">编辑</h2>
+<ul>
+<li>配置页面和导航栏（在mkdocs.yml配置文件中定义的页面才会被mkdocs创建，然后显示在导航栏上）</li>
+</ul>
+<pre><code class="java">    简单的配置页面：
+
+    pages:
+    - 首页: index.md
+    - 关于: about.md
+</code></pre>
+
+<ul>
+<li>多级导航栏（按照下面的代码创建的子选项会被以列表的形式，显示在所属的导航条下）</li>
+</ul>
+<pre><code class="java">    pages:
+    - 首页: index.md
+    - 用户指南:
+        - 编辑你的文档: user-guide/writing-your-docs.md
+        - 设计你的文档: user-guide/styling-your-docs.md
+    - 关于:
+        - 许可证: about/license.md
+        - 发行说明: about/release-notes.md
+</code></pre>
+
+<ul>
+<li>文件的路径（如果MarkDown文件是在一个site中，那么文档的URL就是文档的路径）</li>
+</ul>
+<pre><code class="java">    docs/
+        index.md
+        user-guide/getting-started.md
+        user-guide/configuration-options.md
+        license.md
+        getting-started.md这个文档的路径就是user-guide/getting-started.md，默认根目录就是docs
+        这样的话，就可以在一个文档中链接另外一个文档了，即可以从文档A中打开文档B，见下面的内容。
+</code></pre>
+
+<ul>
+<li>内部链接（从一个文档中打开另外一个文档）</li>
+</ul>
+<pre><code class="java">    [如何开始构建文档](user-guide/getting-started.md)
+    其实最后会被转化成从一个网页打开另外一个网页
+</code></pre>
+
+<ul>
+<li>显示图片（路径如下：）</li>
+</ul>
+<pre><code class="java">    mkdocs.yml
+    docs/
+        CNAME
+        index.md
+        about.md
+        license.md
+        img/
+            screenshot.png
+
+    在MarkDown中写法如下，其实这个就是markdown的标准语法，圆括号中的就是图片的地址，可以是本地的地址，也可以是网络的地址：
+    ![Screenshot](img/screenshot.png)
+</code></pre>
+
+<ul>
+<li>MarkDown语法扩展</li>
+</ul>
+<pre><code class="java">    推荐一个十分不错的MarkDown软件Typora
+</code></pre>
+
+<h2 id="_16">样式</h2>
+<p>MkDocs包含许多不同的内置的样式和扩展的样式，也可以很容易的实现个性定制</p>
+<ul>
+<li>
+<h5 id="_17">想要使用内置的样式，只要在配置文件中写入下列代码：</h5>
+</li>
+</ul>
+<pre><code class="java">    theme: readthedocs
+    即 theme: 样式的名称
+</code></pre>
+
+<ul>
+<li>
+<h5 id="mkdocsreadthedocs">目前可用的样式包括mkdocs和readthedocs两种</h5>
+</li>
+</ul>
+<p><img alt="mkdocs主题" src="https://raw.githubusercontent.com/MoeRookie/MkDocs/master/docs/imgs/index/mkdocs主题.png" /></p>
+<p><img alt="readthedocs主题" src="https://raw.githubusercontent.com/MoeRookie/MkDocs/master/docs/imgs/index/readthedocs主题.png" /></p>
+<pre><code class="java">其它几个主题需要安装，因为不会附带，但是安装的时候提示升级，升级的时候提示错误，所以我就忽略了，重点在文档的内容，主题什么的以后再说吧！
+</code></pre>
+
+<h2 id="_18">配置</h2>
+<p>下面给出部分主要的配置信息：</p>
+<h4 id="_19">项目信息</h4>
+<ul>
+<li>
+<h5 id="site_name"><code>site_name</code> 站点的名称，这个配置是必须的，并且会显示在网页的顶部</h5>
+</li>
+</ul>
+<pre><code class="java">    site_name: The Library of Development
+</code></pre>
+
+<ul>
+<li>
+<h5 id="site_description"><code>site_description</code> 站点的描述</h5>
+</li>
+</ul>
+<pre><code class="java">    配置信息太多了，可以查看中文文档的翻译，然后从官方网站上复制代码
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-07-25 01:28:44
+-->
